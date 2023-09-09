@@ -41,7 +41,7 @@ if (NOT box2d_FOUND)
 endif()
 
 file(GLOB_RECURSE PROJECT_SOURCES CONFIGURE_DEPENDS "${CMAKE_CURRENT_LIST_DIR}/src/*.cpp")
-set(PROJECT_INCLUDE "${CMAKE_CURRENT_LIST_DIR}/src/*.cpp")
+set(PROJECT_INCLUDE "${CMAKE_CURRENT_LIST_DIR}/src/")
 # Add source to this project's executable.
 add_executable(${PROJECT_NAME} ${SOURCES})
 target_sources(${PROJECT_NAME} PRIVATE ${PROJECT_SOURCES})
@@ -49,6 +49,7 @@ target_include_directories(${PROJECT_NAME} PRIVATE ${PROJECT_INCLUDE})
 set_target_properties(${PROJECT_NAME} PROPERTIES CXX_STANDARD 11)
 target_link_libraries(${PROJECT_NAME} PUBLIC raylib raylib_cpp box2d)
 
+target_compile_definitions(${PROJECT_NAME} PUBLIC ASSETS_PATH="${CMAKE_CURRENT_SOURCE_DIR}/assets/")
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET ${PROJECT_NAME} PROPERTY CXX_STANDARD 20)
