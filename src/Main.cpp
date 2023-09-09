@@ -13,9 +13,12 @@ int main()
 	Adventurer adventurer;
 	while (!window.ShouldClose())
 	{
+		float dt = GetFrameTime();
+		adventurer.update(dt);
 		BeginDrawing();
 		ClearBackground(RAYWHITE);
 		DrawText("Bangla", 160, 200, 20, LIGHTGRAY);
+		adventurer.draw();
 		EndDrawing();
 	}
 	return 0;
