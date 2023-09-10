@@ -1,6 +1,7 @@
 #pragma once
 
 #include "EScenes.hpp"
+#include "BaseScene.hpp"
 
 class SceneManager
 {
@@ -8,7 +9,7 @@ public:
 	SceneManager();
 	~SceneManager();
 	void changeScene(const Scenes scene);
-	Scenes getCurrentScene();
+	BaseScene* getCurrentScene();
 private:
-	Scenes currentScene;
+	BaseScene* currentScene;
 };

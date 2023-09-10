@@ -22,7 +22,7 @@ void Game::gameLoop()
 		float dt = GetFrameTime();
 		BeginDrawing();
 		ClearBackground(RAYWHITE);
-		DrawText("Bangla", 160, 200, 20, LIGHTGRAY);
+		sceneManager->getCurrentScene()->draw();
 		EndDrawing();
 	}
 }
