@@ -3,16 +3,22 @@
 
 #include <raylib-cpp.hpp>
 
+#include "entities/Adventurer/Adventurer.hpp"
+
 
 int main()
 {
 	raylib::Window window(800, 450, "Raylib CPP");
 	SetTargetFPS(60);
+	Adventurer adventurer;
 	while (!window.ShouldClose())
 	{
+		float dt = GetFrameTime();
+		adventurer.update(dt);
 		BeginDrawing();
 		ClearBackground(RAYWHITE);
 		DrawText("Bangla", 160, 200, 20, LIGHTGRAY);
+		adventurer.draw();
 		EndDrawing();
 	}
 	return 0;
