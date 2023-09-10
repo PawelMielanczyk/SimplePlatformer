@@ -39,7 +39,7 @@ void Adventurer::draw()
 	DrawTexturePro(sprite, currentAnimationRectangle, { 400, 200, 50 * 2, 37 * 2 }, { 0, 0 }, 0.0f, WHITE);
 }
 
-void Adventurer::update(float dt)
+void Adventurer::update(const float dt)
 {
 	animationTick -= dt;
 	if (animationTick <= 0)
